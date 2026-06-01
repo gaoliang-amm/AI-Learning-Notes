@@ -80,6 +80,27 @@ from transformers import AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained("gpt2")
 ```
 
+### 📌 Seq2Seq 生成（T5/BART类）
+
+```python
+from transformers import AutoModelForSeq2SeqLM
+
+model = AutoModelForSeq2SeqLM.from_pretrained("t5-base")
+```
+
+### 📌 大模型加载（显存优化）
+
+```python
+from transformers import AutoModelForCausalLM
+
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-2-7b-hf",
+    device_map="auto",        # 自动分配到多张 GPU
+    torch_dtype="float16",    # 半精度加载，节省显存
+    low_cpu_mem_usage=True    # 低 CPU 内存占用加载
+)
+```
+
 ---
 
 ## ⚡ 2.4 pipeline（工业级快速推理）
@@ -349,15 +370,3 @@ Transformers Model（训练/推理）
 # 🧾 7. 一句话总结
 
 > Hugging Face 生态 = “模型（Transformers） + 分词（Tokenizers） + 数据（Datasets）” 的一体化深度学习工程框架
-
----
-
-如果你需要，我可以帮你再升级一版：
-
-- ✅ 面试速记版（1页纸）
-    
-- ✅ Transformer + BERT/GPT完整架构笔记
-    
-- ✅ 训练微调（fine-tuning）全流程 Obsidian 模板
-    
-- ✅ 或做成 PPT 分享版（你之前也在做这个）

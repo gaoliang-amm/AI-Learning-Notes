@@ -1,4 +1,4 @@
-# FastAPI & SQLAlchemy 课程笔记
+
 
 > [!info] 课程信息
 > - **出处**：尚硅谷大模型技术系列
