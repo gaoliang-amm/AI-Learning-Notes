@@ -442,9 +442,9 @@ builder.add_node(
 
 **两种边类型：**
 
-| 类型 | API | 说明 |
-|---|---|---|
-| 普通边 | `add_edge(from, to)` | 固定连接，A 执行完必定到 B |
+| 类型  | API                                               | 说明              |
+| --- | ------------------------------------------------- | --------------- |
+| 普通边 | `add_edge(from, to)`                              | 固定连接，A 执行完必定到 B |
 | 条件边 | `add_conditional_edges(from, router_fn, mapping)` | 动态路由，由函数决定下一个节点 |
 
 ---
@@ -857,10 +857,10 @@ def my_node(state: State, runtime: Runtime):
                     ┌─────────────────────────────────────┐
                     │           图执行                     │
                     │                                     │
-  第一次 invoke ──→  │  review_node                       │
+  第一次 invoke ──→  │  review_node                        │
                     │    ...                              │
                     │    user_input = interrupt(data) ←── │── 暂停！
-                    │    ...（暂停，不继续）               │
+                    │    ...（暂停，不继续）                │
                     └─────────────────────────────────────┘
                               ↓
               result["__interrupt__"][0].value  ← 包含要审核的数据
@@ -869,7 +869,7 @@ def my_node(state: State, runtime: Runtime):
                               ↓
   第二次 invoke ──→  Command(resume=user_decision)
                     │    user_input = interrupt(data)  ← 从这里继续
-                    │    ...（继续执行）                   │
+                    │    ...（继续执行）                    │
                     └─────────────────────────────────────┘
 ```
 
