@@ -11,15 +11,38 @@
 ```
 AI-Learning/
 ├── 算法/          # 150+ 道 LeetCode Python 题解，19 个专题分类
-├── 大模型/        # LLM 笔记：Transformer、预训练、微调、部署、RAG、Agent
-│   ├── 00. 大模型知识体系导航.md   # 全局导读，串联全部笔记
-│   ├── 01. LLM基础与GPT-2.md      # Ch1-2: LLM概念、GPT-2架构与实现
-│   ├── 02. 强化学习基础.md         # Ch3-4: MDP、策略梯度、Actor-Critic
-│   ├── 03. PPO与RLHF对齐.md       # Ch5-9: PPO裁剪、重要性采样、RLHF流程
-│   ├── 04. GRPO与DeepSeek-R1.md   # Ch10-12: DPO/GRPO/DAPO、DeepSeek-R1复刻
-│   ├── 05. 多模态模型.md           # Ch13-15: ViT、CLIP、ClipCap、Qwen2.5-VL
-│   ├── 06. 扩散模型与文生图.md     # Ch16-20: DDPM、条件扩散、DALL-E2
-│   └── ...                        # 其他已有笔记（LangChain、RAG、Agent等）
+│   ├── 00. 数据结构与算法基础.md    # 八大排序、查找、DP、回溯、贪心
+│   └── ...                        # 按专题分类的题解
+├── 大模型/        # LLM 学习笔记（4 个子目录 + 导航）
+│   ├── 00. 大模型知识体系导航.md   # 全局导读，学习路线，所有笔记索引
+│   ├── 强化学习与多模态/          # PDF《大语言模型、强化学习和多模态实践》
+│   │   ├── 01. LLM基础与GPT-2.md
+│   │   ├── 02. 强化学习基础.md
+│   │   ├── 03. PPO与RLHF对齐.md
+│   │   ├── 04. GRPO与DeepSeek-R1.md
+│   │   ├── 05. 多模态模型.md
+│   │   └── 06. 扩散模型与文生图.md
+│   ├── 基础课程/                  # 尚硅谷基础课程笔记
+│   │   ├── 01. 数学基础.md        # 高等数学、线性代数、概率论
+│   │   ├── 02. 机器学习基础.md    # ML流程、线性回归/逻辑回归/SVM/决策树/集成学习
+│   │   ├── 03. 深度学习基础.md    # PyTorch、神经网络、CNN、优化器、正则化
+│   │   └── 04. NLP基础.md         # 分词、Word2Vec、RNN/LSTM/GRU、Seq2Seq、Attention
+│   ├── 大模型应用/                # Transformer、预训练、LangChain、Agent、RAG
+│   │   ├── Transformer.md
+│   │   ├── 预训练.md
+│   │   ├── LLM技术全景笔记.md
+│   │   ├── LangChain.md
+│   │   ├── LangGraph.md
+│   │   ├── Agent与工具调用.md
+│   │   └── RAG技术全解.md
+│   └── 工程实践/                  # 工具链与工程开发
+│       ├── Docker.md
+│       ├── Git.md
+│       ├── Linux.md
+│       ├── Shell.md
+│       ├── numpy与pandas.md
+│       ├── FastAPI_SQLAlchemy_笔记.md
+│       └── HuggingFace生态.md
 ├── 基础概念/      # AI 缩写术语表
 ├── 模板/          # 笔记模板
 └── 项目/          # AI 项目文档（需求 → 训练 → 部署）
@@ -32,14 +55,14 @@ AI-Learning/
 - 大模型笔记使用 Obsidian 特性：`[[wikilinks]]` 双向链接、frontmatter（`aliases`/`tags`）、Mermaid 图
 - 算法题解使用 Python；大模型笔记包含 PyTorch/Transformers 代码片段
 - 笔记之间大量交叉引用——创建新文件前先检查已有的 `[[链接]]` 保持一致性
+- 跨目录引用使用相对路径格式：`[[子目录/文件名|显示名]]`
 
-### 大模型系列笔记规范（00-06号）
+### 强化学习与多模态系列（00-06号）
 
 基于《大语言模型、强化学习和多模态实践》PDF 教程整理，共 7 个文件：
 
 | 文件 | PDF章节 | 核心内容 |
 |------|--------|---------|
-| 00. 大模型知识体系导航 | 全局 | 三条演进主线、贯穿概念、学习顺序、常见困惑 |
 | 01. LLM基础与GPT-2 | Ch1-2 | NTP、Decoder-Only Transformer、GPT-2架构 |
 | 02. 强化学习基础 | Ch3-4 | MDP、策略梯度、REINFORCE、Actor-Critic、GAE |
 | 03. PPO与RLHF对齐 | Ch5-9 | PPO裁剪目标、重要性采样、GRPO原理、RLHF三阶段 |
@@ -47,9 +70,20 @@ AI-Learning/
 | 05. 多模态模型 | Ch13-15 | ViT、CLIP对比学习、ClipCap图生文、Qwen2.5-VL |
 | 06. 扩散模型与文生图 | Ch16-20 | DDPM、U-Net、Classifier-Free Guidance、DALL-E2三模型 |
 
-**交叉引用规则**：所有笔记在"相关笔记"部分链接到其他 6 个笔记 + 00号导航，使用 `[[00. 大模型知识体系导航]]` 格式。
+**直觉解释风格**：重要概念附带通俗类比（如"PPO裁剪=方向盘限位器"、"GRPO组优势=全班考试看排名"）。
 
-**直觉解释风格**：重要概念附带通俗类比（如"PPO裁剪=方向盘限位器"、"GRPO组优势=全班考试看排名"），帮助理解。
+### 基础课程笔记规范
+
+基于尚硅谷课程整理，面试导向 + 知识体系串联：
+
+| 文件 | 对应课程 | 核心内容 |
+|------|---------|---------|
+| 01. 数学基础 | 数学基础 | 极限、导数、梯度、矩阵运算、矩阵求导、概率分布、贝叶斯、MLE |
+| 02. 机器学习基础 | 机器学习 | 特征工程、损失函数、评估指标、线性/逻辑回归、SVM、决策树、集成学习 |
+| 03. 深度学习基础 | 深度学习 | PyTorch、Tensor、神经网络、激活函数、反向传播、优化器、CNN |
+| 04. NLP基础 | NLP | 分词、Word2Vec、RNN/LSTM/GRU、Seq2Seq、Attention、Transformer |
+
+**笔记风格**：每篇包含知识体系串联 + 面试高频FAQ + 背诵版总结。全面覆盖源文档所有算法和概念。
 
 ## Git 工作流
 
@@ -62,5 +96,6 @@ AI-Learning/
 
 - `.obsidian/` 目录为 Obsidian 配置，不要修改
 - 部分 `.md` 文件包含 Mermaid 图表（需 Obsidian Mermaid 插件渲染）
-- 在 `AI-Learning/大模型/` 下新建笔记时，遵循现有 frontmatter 格式（`aliases`、`tags`、`created`）
+- 新建笔记时遵循现有 frontmatter 格式（`aliases`、`tags`、`created`）
 - 算法题解文件命名规则：`{题号}. {题目名}.md`
+- 工具类笔记（Docker/Git/Linux/Shell/numpy与pandas）定位为**速查参考**，精简不啰嗦
