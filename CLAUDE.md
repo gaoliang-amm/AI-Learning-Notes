@@ -45,7 +45,9 @@ AI-Learning/
 │       └── HuggingFace生态.md
 ├── 基础概念/      # AI 缩写术语表
 ├── 模板/          # 笔记模板
-└── 项目/          # AI 项目文档（需求 → 训练 → 部署）
+└── 项目/          # AI 项目文档（每个项目含 CLAUDE.md 快速索引）
+    ├── 01_AI智评/            # BERT 电商评论情感分析（V1手动+V2 AutoModel）
+    └── 02_智能商品发布/      # BERT 商品标题多分类 + AMP + FastAPI
 ```
 
 ## 内容规范
