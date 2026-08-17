@@ -12,7 +12,7 @@
 
 这是我的个人 AI 学习知识库，记录了从算法基础到大模型开发的完整学习路径。所有内容以 Markdown 格式整理，使用 Obsidian 管理，兼顾个人知识沉淀与云端备份。
 
-**当前内容规模：** 150+ 道算法题解 · 19 个专题分类 · 4 篇基础课程 · 6 篇 PDF 系列 · 7 篇应用/工程笔记 · 5 篇工具参考 · 2 个完整项目
+**当前内容规模：** 150+ 道算法题解 · 19 个专题分类 · 4 篇基础课程 · 6 篇 PDF 系列 · 7 篇应用/工程笔记 · 5 篇工具参考 · 5 个完整项目
 
 ---
 
@@ -96,7 +96,7 @@
 
 ### 🚀 项目实战
 
-#### 00_AI 智评 — 电商评论情感分析
+#### 01_AI 智评 — 电商评论情感分析
 
 基于 BERT 的中文电商评论正/负情感分类项目，包含两个版本：
 
@@ -107,9 +107,45 @@
 
 > 完整记录了从数据预处理、模型训练、评估到预测部署的全流程文档。
 
-#### 01_智能商品发布
+#### 02_智能商品发布
 
 基于 AI 的智能商品发布系统，项目文档持续完善中。
+
+#### 03_掌柜智库 — 企业私有知识库问答
+
+基于 RAG 架构 + LangGraph 工作流编排的企业级私有知识库智能问答系统。
+
+| 特性 | 说明 |
+|------|------|
+| 核心设计 | 多路检索 + RRF 融合 + Rerank 精排 |
+| 技术栈 | LangGraph + RAGFlow + Tavily + SSE |
+| 业务场景 | 企业文档问答、知识管理、流式交互 |
+
+> 工程化代码 5500+ 行，实现从文档接入、知识库构建到流式答案生成的全链路生产级能力。
+
+#### 04_深度搜索 — 多智能体深度搜索
+
+基于 DeepAgents 框架的多智能体深度搜索系统，采用「1 主 + 3 专」架构。
+
+| 特性 | 说明 |
+|------|------|
+| 核心设计 | 主智能体统筹调度 + 专家子智能体并行协作 |
+| 技术栈 | DeepAgents + Tavily + RAGFlow + WebSocket |
+| 业务场景 | 复杂信息处理、多轮迭代搜索、研究报告生成 |
+
+> 通过「搜索→阅读→反思→再搜索」多轮迭代，实现广覆盖、高精准的深度研究。
+
+#### 05_电商智能客服 — LLM 路由 + 流程编排
+
+基于 LLM 路由 + YAML 流程编排的电商智能客服系统，支持任务流程、知识问答、闲聊三种对话模式。
+
+| 特性 | 说明 |
+|------|------|
+| 核心设计 | 三轨分离 + 白名单校验 + 澄清兜底 |
+| 技术栈 | FastAPI + LangChain + 通义千问 + SQLAlchemy |
+| 业务场景 | 查订单、查物流、退款申请、商品咨询、闲聊 |
+
+> 包含完整的架构设计、核心模块详解、面试表达和追问准备。
 
 ---
 
@@ -138,7 +174,7 @@
 
 This is my personal AI learning knowledge base, documenting the full learning path from algorithm fundamentals to large model development. All content is organized in Markdown and managed with Obsidian.
 
-**Current scale:** 150+ algorithm solutions · 19 topics · 4 basic course notes · 6 PDF series · 7 application/engineering notes · 5 tool references · 2 projects
+**Current scale:** 150+ algorithm solutions · 19 topics · 4 basic course notes · 6 PDF series · 7 application/engineering notes · 5 tool references · 5 projects
 
 ---
 
@@ -152,6 +188,61 @@ This is my personal AI learning knowledge base, documenting the full learning pa
 | [LLM Applications](AI-Learning/大模型/大模型应用/) | Transformer, Pre-training, LangChain, Agent, RAG | ✅ Complete |
 | [Engineering](AI-Learning/大模型/工程实践/) | Docker, Git, Linux, Shell, numpy/pandas, FastAPI, HuggingFace | ✅ Complete |
 | [Projects](AI-Learning/项目/) | End-to-end AI project documentation | ✅ Active |
+
+---
+
+### 🚀 Projects
+
+#### 01_AI Sentiment — E-commerce Review Sentiment Analysis
+
+BERT-based Chinese e-commerce review sentiment classification with two versions:
+
+| Version | Approach | Description |
+|---------|----------|-------------|
+| V1 | Manual | Custom `nn.Module` + BERT backbone |
+| V2 | HuggingFace | `AutoModelForSequenceClassification` high-level API |
+
+> Complete documentation from data preprocessing, model training, evaluation to deployment.
+
+#### 02_Smart Product Publishing
+
+AI-powered intelligent product publishing system, documentation in progress.
+
+#### 03_Store Advisor — Enterprise Private Knowledge Base QA
+
+Enterprise-grade private knowledge base QA system based on RAG + LangGraph workflow orchestration.
+
+| Feature | Description |
+|---------|-------------|
+| Core Design | Multi-path retrieval + RRF fusion + Rerank |
+| Tech Stack | LangGraph + RAGFlow + Tavily + SSE |
+| Scenarios | Enterprise document QA, knowledge management |
+
+> 5500+ lines of production code, full-chain capability from document ingestion to streaming answer generation.
+
+#### 04_Deep Search — Multi-Agent Deep Search
+
+Multi-agent deep search system based on DeepAgents framework with "1 Main + 3 Expert" architecture.
+
+| Feature | Description |
+|---------|-------------|
+| Core Design | Main agent orchestration + Expert agents parallel collaboration |
+| Tech Stack | DeepAgents + Tavily + RAGFlow + WebSocket |
+| Scenarios | Complex information processing, multi-round search |
+
+> Multi-round iteration via "search→read→reflect→re-search" for comprehensive and accurate research.
+
+#### 05_E-commerce Customer Service — LLM Routing + Flow Orchestration
+
+E-commerce customer service system based on LLM routing + YAML flow orchestration.
+
+| Feature | Description |
+|---------|-------------|
+| Core Design | Three-track separation + Whitelist validation + Clarification fallback |
+| Tech Stack | FastAPI + LangChain + Tongyi Qianwen + SQLAlchemy |
+| Scenarios | Order tracking, logistics, refund, product consultation |
+
+> Complete architecture design, core module analysis, interview expression and Q&A preparation.
 
 ---
 
